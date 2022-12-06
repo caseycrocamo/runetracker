@@ -1,5 +1,6 @@
 import styles from './App.module.css';
-import RuneIcon from './RuneIcon';
+import PrimaryTree from './PrimaryTree';
+import SecondaryTree from './SecondaryTree';
 
 const runesJson = {
 	"generalRunes": [
@@ -74,18 +75,19 @@ const runesJson = {
 	]
 };
 function App() {
-  const primaryTree = runesJson.primaryRuneTree.displayName;
-  const secondaryTree = runesJson.secondaryRuneTree.displayName;
+  const primaryTreeName = runesJson.primaryRuneTree.displayName;
+  const secondaryTreeName = runesJson.secondaryRuneTree.displayName;
+  const keystone = runesJson.keystone.id;
+  const selectedPrimaryRuneIds = runesJson.generalRunes.slice(1, 4).map((value) => value.id);
+  const selectedSecondaryRuneIds = runesJson.generalRunes.slice(4).map((value) => value.id);
+  const selectedStatRuneIds = runesJson.statRunes.map((value) => value.id);
+
   return (
     <div class={styles.App}>
       <header class={styles.header}>
-        <div class="rune-container">
-          <div class="rune-tree">
-            <img src="src/assets/7200_Domination.png"></img>
-            <div class="keystones">
-              <RuneIcon runeTree={primaryTree} runeName="Guardian" />
-            </div>
-          </div>
+        <div class="rune-container flex space-between">
+			<PrimaryTree primaryTreeName={primaryTreeName} keystoneId={keystone} selectedRuneIds={selectedPrimaryRuneIds}/>
+			<SecondaryTree secondaryTreeName={secondaryTreeName} selectedRuneIds={selectedSecondaryRuneIds} selectedStatRuneIds={selectedStatRuneIds} />
         </div>
       </header>
     </div>
