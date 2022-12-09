@@ -5,6 +5,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
+    "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch",
     "build": "vite build",
     "serve": "vite preview"
   },

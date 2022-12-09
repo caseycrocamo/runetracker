@@ -85,7 +85,7 @@ function App() {
   return (
     <div class={styles.App}>
       <header class={styles.header}>
-        <div class="rune-container flex space-between">
+        <div class="rune-container flex place-content-around w-full">
 			<PrimaryTree primaryTreeName={primaryTreeName} keystoneId={keystone} selectedRuneIds={selectedPrimaryRuneIds}/>
 			<SecondaryTree secondaryTreeName={secondaryTreeName} selectedRuneIds={selectedSecondaryRuneIds} selectedStatRuneIds={selectedStatRuneIds} />
         </div>
