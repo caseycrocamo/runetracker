@@ -1,3 +1,4 @@
+import { mainRune, keystone as keystoneRuneType } from './configuration/runetype';
 import { loadConfiguration } from './configuration/treeconfig';
 import RuneIcon from './RuneIcon';
 function PrimaryTree(params){
@@ -10,34 +11,34 @@ function PrimaryTree(params){
     const row3class = `${runeWidth} col-span-${12/(configuration[3].length)}`;
     
     return (
-        <div class="rune-tree grid grid-cols-12 grid-rows-5">
+        <div class="rune-tree grid grid-cols-12 grid-rows-5 w-full">
             <img class="w-20 col-span-6" src={configuration.iconSrc}></img>
             <span class="col-span-6">{configuration.name}</span>
             <For each={configuration.keystones} fallback={<div>Loading...</div>}>
                 {(keystone) =>
                     <div class={keystoneRowClass}>
-                        <RuneIcon runeTree={primaryTreeName} runeName={keystone.displayName} selected={keystone.id === keystoneId} keystone={true} imgSrcOverride={keystone.imgSrcOverride}/>
+                        <RuneIcon runeTree={primaryTreeName} runeName={keystone.displayName} selected={keystone.id === keystoneId} runeType={keystoneRuneType} imgSrcOverride={keystone.imgSrcOverride}/>
                     </div>
                 }
             </For>
             <For each={configuration[1]} fallback={<div>Loading...</div>}>
                 {(rune) =>
                     <div class={row1class}>
-                        <RuneIcon runeTree={primaryTreeName} runeName={rune.displayName} selected={selectedRuneIds.includes(rune.id)} keystone={false} imgSrcOverride={rune.imgSrcOverride}/>
+                        <RuneIcon runeTree={primaryTreeName} runeName={rune.displayName} selected={selectedRuneIds.includes(rune.id)} runeType={mainRune} imgSrcOverride={rune.imgSrcOverride}/>
                     </div>
                 }
             </For>
             <For each={configuration[2]} fallback={<div>Loading...</div>}>
                 {(rune) =>
                     <div class={row2class}>
-                        <RuneIcon runeTree={primaryTreeName} runeName={rune.displayName} selected={selectedRuneIds.includes(rune.id)} keystone={false} imgSrcOverride={rune.imgSrcOverride}/>
+                        <RuneIcon runeTree={primaryTreeName} runeName={rune.displayName} selected={selectedRuneIds.includes(rune.id)} runeType={mainRune} imgSrcOverride={rune.imgSrcOverride}/>
                     </div>
                 }
             </For>
             <For each={configuration[3]} fallback={<div>Loading...</div>}>
                 {(rune) =>
                     <div class={row3class}>
-                        <RuneIcon runeTree={primaryTreeName} runeName={rune.displayName} selected={selectedRuneIds.includes(rune.id)} keystone={false} imgSrcOverride={rune.imgSrcOverride}/>
+                        <RuneIcon runeTree={primaryTreeName} runeName={rune.displayName} selected={selectedRuneIds.includes(rune.id)} runeType={mainRune} imgSrcOverride={rune.imgSrcOverride}/>
                     </div>
                 }
             </For>

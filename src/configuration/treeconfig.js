@@ -260,6 +260,31 @@ const timeWarpTonic = {
     id: 8352,
     displayName: 'TimeWarpTonic'
 };
+//stat runes
+const adaptiveForce = {
+    id: 5008,
+    displayName: 'StatModsAdaptiveForceIcon'
+}
+const attackSpeed = {
+    id: 5005,
+    displayName: 'StatModsAttackSpeedIcon'
+}
+const cooldownReduction = {
+    id: 5007,
+    displayName: 'StatModsCDRScalingIcon'
+}
+const armor = {
+    id: 5002,
+    displayName: 'StatModsArmorIcon'
+}
+const magicResistance = {
+    id: 5003,
+    displayName: 'StatModsMagicResIcon.MagicResist_Fix'
+}
+const health = {
+    id: 5001,
+    displayName: 'StatModsHealthScalingIcon'
+}
 
 const precision = {
     name: 'Precision',
@@ -301,6 +326,12 @@ const inspiration = {
     2: [futuresMarket, minionDematerializer, biscuitDelivery],
     3: [cosmicInsight, approachVelocity, timeWarpTonic]
 }
+const statRunes = {
+    name: 'StatRunes',
+    1: [adaptiveForce, attackSpeed, cooldownReduction],
+    2: [adaptiveForce, armor, magicResistance],
+    3: [health, armor, magicResistance]
+}
 
 function loadConfiguration(treeName) {
     switch(treeName){
@@ -317,4 +348,4 @@ function loadConfiguration(treeName) {
     }
 }
 
-export {precision, domination, sorcery, inspiration, resolve, loadConfiguration};
+export {precision, domination, sorcery, inspiration, resolve, statRunes, loadConfiguration};
