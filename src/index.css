@@ -14,3 +14,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.rune-container {
+  width: 1162px;
+  height: 720px;
+}
+
+.Domination {
+  background-image: url("src/assets/domination/environment.jpg");
+}
+.Precision {
+  background-image: url("src/assets/precision/environment.jpg");
+}
+.Resolve {
+  background-image: url("src/assets/resolve/environment.jpg");
+}
+.Inspiration {
+  background-image: url("src/assets/inspiration/environment.jpg");
+}
+.Sorcery {
+  background-image: url("src/assets/sorcery/environment.jpg");
+}

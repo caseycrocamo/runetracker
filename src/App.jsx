@@ -1,4 +1,3 @@
-import styles from './App.module.css';
 import PrimaryTree from './PrimaryTree';
 import SecondaryTree from './SecondaryTree';
 
@@ -81,20 +80,17 @@ function App() {
   const selectedPrimaryRuneIds = runesJson.generalRunes.slice(1, 4).map((value) => value.id);
   const selectedSecondaryRuneIds = runesJson.generalRunes.slice(4).map((value) => value.id);
   const selectedStatRuneIds = runesJson.statRunes.map((value) => value.id);
+  const runeContainerClass = `rune-container flex ${primaryTreeName}`;
 
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <div class="rune-container flex">
-			<div class="w-48 ml-12">
-				<PrimaryTree primaryTreeName={primaryTreeName} keystoneId={keystone} selectedRuneIds={selectedPrimaryRuneIds}/>
-			</div>
-			<div class="w-48 ml-12">
-				<SecondaryTree secondaryTreeName={secondaryTreeName} selectedRuneIds={selectedSecondaryRuneIds} selectedStatRuneIds={selectedStatRuneIds} />
-			</div>
-        </div>
-      </header>
-    </div>
+	<div class={runeContainerClass}>
+		<div class="w-48 ml-12">
+			<PrimaryTree primaryTreeName={primaryTreeName} keystoneId={keystone} selectedRuneIds={selectedPrimaryRuneIds}/>
+		</div>
+		<div class="w-48 ml-12">
+			<SecondaryTree secondaryTreeName={secondaryTreeName} selectedRuneIds={selectedSecondaryRuneIds} selectedStatRuneIds={selectedStatRuneIds} />
+		</div>
+	</div>
   );
 }
 
