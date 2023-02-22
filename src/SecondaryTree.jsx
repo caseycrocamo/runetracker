@@ -4,10 +4,11 @@ import RuneIcon from './RuneIcon';
 function SecondaryTree(params){
     const {secondaryTreeName, selectedRuneIds, selectedStatRuneIds} = params;
     const configuration = loadConfiguration(secondaryTreeName);
-    const runeWidth = 'w-16';
+    const runeWidth = 'w-10';
     const row1class = `${runeWidth} col-span-${12/(configuration[1].length)}`;
     const row2class = `${runeWidth} col-span-${12/(configuration[2].length)}`;
     const row3class = `${runeWidth} col-span-${12/(configuration[3].length)}`;
+    const statRuneClass = 'w-6 col-span-4';
     
     return (
         <div class="rune-tree grid grid-cols-12 grid-rows-7 w-full">
@@ -36,21 +37,21 @@ function SecondaryTree(params){
             </For>
             <For each={statRunes[1]} fallback={<div>Loading...</div>}>
                 {(rune) =>
-                    <div class="w-12 col-span-4">
+                    <div class={statRuneClass}>
                         <RuneIcon runeTree={statRunes.name} runeName={rune.displayName} selected={selectedStatRuneIds[1] === rune.id} runeType={statRune} imgSrcOverride={rune.imgSrcOverride}/>
                     </div>
                 }
             </For>
             <For each={statRunes[2]} fallback={<div>Loading...</div>}>
                 {(rune) =>
-                    <div class="w-12 col-span-4">
+                    <div class={statRuneClass}>
                         <RuneIcon runeTree={statRunes.name} runeName={rune.displayName} selected={selectedStatRuneIds[2] === rune.id} runeType={statRune} imgSrcOverride={rune.imgSrcOverride}/>
                     </div>
                 }
             </For>
             <For each={statRunes[3]} fallback={<div>Loading...</div>}>
                 {(rune) =>
-                    <div class="w-12 col-span-4">
+                    <div class={statRuneClass}>
                         <RuneIcon runeTree={statRunes.name} runeName={rune.displayName} selected={selectedStatRuneIds[3] === rune.id} runeType={statRune} imgSrcOverride={rune.imgSrcOverride}/>
                     </div>
                 }

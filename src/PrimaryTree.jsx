@@ -4,8 +4,8 @@ import RuneIcon from './RuneIcon';
 function PrimaryTree(params){
     const {primaryTreeName, keystoneId, selectedRuneIds} = params;
     const configuration = loadConfiguration(primaryTreeName);
-    const runeWidth = 'w-16';
-    const keystoneRowClass = `w-20 col-span-${12/(configuration.keystones.length)}`;
+    const runeWidth = 'w-10';
+    const keystoneRowClass = `w-16 col-span-${12/(configuration.keystones.length)}`;
     const row1class = `${runeWidth} col-span-${12/(configuration[1].length)}`;
     const row2class = `${runeWidth} col-span-${12/(configuration[2].length)}`;
     const row3class = `${runeWidth} col-span-${12/(configuration[3].length)}`;

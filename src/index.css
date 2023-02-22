@@ -16,8 +16,9 @@ code {
 }
 
 .rune-container {
-  width: 1162px;
-  height: 720px;
+  width: 920px;
+  height: 581px;
+  background-size:cover;
 }
 
 .Domination {
