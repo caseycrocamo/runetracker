@@ -80,7 +80,7 @@ function App() {
   const selectedPrimaryRuneIds = runesJson.generalRunes.slice(1, 4).map((value) => value.id);
   const selectedSecondaryRuneIds = runesJson.generalRunes.slice(4).map((value) => value.id);
   const selectedStatRuneIds = runesJson.statRunes.map((value) => value.id);
-  const runeContainerClass = `rune-container flex ${primaryTreeName}`;
+  const runeContainerClass = `rune-container flex pt-16 ${primaryTreeName}`;
 
   return (
 	<div class={runeContainerClass}>
