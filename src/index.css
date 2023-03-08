@@ -1,18 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: beaufortforlol-regular;
+  src: url("https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-typekit/global/default/fonts/beaufort/beaufortforlol-regular.otf") format("opentype");
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: beafortforlol-regular;
 }
 
 .rune-container {

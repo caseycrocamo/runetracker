@@ -5,22 +5,26 @@ function PrimaryTree(params){
     const {primaryTreeName, keystoneId, selectedRuneIds} = params;
     const configuration = loadConfiguration(primaryTreeName);
     const runeWidth = 'w-10';
-    const keystoneRowClass = `w-16 col-span-${12/(configuration.keystones.length)}`;
+    const keystoneRowClass = `w-64 flex justify-between`;
     const row1class = `${runeWidth} col-span-${12/(configuration[1].length)}`;
     const row2class = `${runeWidth} col-span-${12/(configuration[2].length)}`;
     const row3class = `${runeWidth} col-span-${12/(configuration[3].length)}`;
     
     return (
-        <div class="rune-tree grid grid-cols-12 grid-rows-5 w-full">
-            <img class="w-20 col-span-6" src={configuration.iconSrc}></img>
-            <span class="col-span-6">{configuration.name}</span>
-            <For each={configuration.keystones} fallback={<div>Loading...</div>}>
-                {(keystone) =>
-                    <div class={keystoneRowClass}>
-                        <RuneIcon runeTree={primaryTreeName} runeName={keystone.displayName} selected={keystone.id === keystoneId} runeType={keystoneRuneType} imgSrcOverride={keystone.imgSrcOverride}/>
-                    </div>
-                }
-            </For>
+        <div class="rune-tree w-full">
+            <div class="flex items-center font-semibold text-xl">
+                <img class="w-20" src={configuration.iconSrc}></img>
+                <span class="w-20 text-[#648f68] pl-8">{configuration.name}</span>
+            </div>
+            <div class={keystoneRowClass}>
+                <For each={configuration.keystones} fallback={<div>Loading...</div>}>
+                    {(keystone) =>
+                        <div class="w-16">
+                            <RuneIcon runeTree={primaryTreeName} runeName={keystone.displayName} selected={keystone.id === keystoneId} runeType={keystoneRuneType} imgSrcOverride={keystone.imgSrcOverride}/>
+                        </div>
+                    }
+                </For>
+            </div>
             <For each={configuration[1]} fallback={<div>Loading...</div>}>
                 {(rune) =>
                     <div class={row1class}>

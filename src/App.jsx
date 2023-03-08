@@ -84,10 +84,10 @@ function App() {
 
   return (
 	<div class={runeContainerClass}>
-		<div class="w-48 ml-12">
+		<div class="w-72 ml-12">
 			<PrimaryTree primaryTreeName={primaryTreeName} keystoneId={keystone} selectedRuneIds={selectedPrimaryRuneIds}/>
 		</div>
-		<div class="w-48 ml-12">
+		<div class="w-72 ml-12">
 			<SecondaryTree secondaryTreeName={secondaryTreeName} selectedRuneIds={selectedSecondaryRuneIds} selectedStatRuneIds={selectedStatRuneIds} />
 		</div>
 	</div>
